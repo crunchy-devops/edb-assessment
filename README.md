@@ -17,7 +17,7 @@ The web application to run is the  <span style="color:blue">Django Polls App.</s
 The web application should expose two contexts, the polls page (like http://HOST:PORT/) and the admin page (like http://HOST:PORT/admin/). Polls are managed via the admin page and votes can be added via the polls page.
 Backend
 
-The backend layer should run PostgreSQL in a High Availability configuration. The software architect selected the Cloud Native PostgreSQL Kubernetes operator as it will both enhance and simplify the management of the PostgreSQL workload.
+The backend layer should run <span style="color:blue">PostgreSQL in a High Availability configuration</span>. The software architect selected the Cloud Native PostgreSQL Kubernetes operator as it will both enhance and simplify the management of the PostgreSQL workload.
 
 ## Monitoring
 

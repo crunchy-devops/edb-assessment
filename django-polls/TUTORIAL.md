@@ -11,9 +11,9 @@ htop  # check your vm config
 Crtl-c  # exit
 ````
 
-## Django set up on virtualenv on a Ubuntu 20.04
+## Django set up on virtualenv on Ubuntu 20.04
 ```shell
-cd   # you should be on the home directory
+cd   # you should be on your home directory
 git clone  https://github.com/crunchy-devops/edb-assessment.git
 cd edb-assessment/django-polls
 python3 -m venv venv  # set up the module venv in the directory venv
@@ -23,5 +23,5 @@ pip3 install django  # install django
 python3 -m django --version  # check version number
 python3 manage.py migrate  # create database schema
 python3 manage.py createsuperuser # set superuser username and password
-python3 manage.py runserver 0:8000 # sanity test and enter the first poll 
+python3 manage.py runserver 0:8000 # sanity test and enter your first poll 
 ```
