@@ -8,7 +8,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../docker/docker-aston-poec/UBUNTU.md">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/django-polls/TUTORIAL.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/django-polls/mysite/settings.py">
           <value>
             <set />
           </value>
