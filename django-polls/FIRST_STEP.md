@@ -2,8 +2,9 @@
 
 ## Django set up on virtualenv on Ubuntu 20.04 using sqlite3
 ```shell
-cd edb-assessment/django-polls
+cd ~/edb-assessment/django-polls
 # you should be in venv
+source venv/bin/activate 
 pip3 install django  # install django 
 python3 -m django --version  # check version number
 python3 manage.py migrate  # create database schema

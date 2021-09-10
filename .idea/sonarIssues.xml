@@ -28,6 +28,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/django-polls-postgresql/mysite/settings.py">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/django-polls/FIRST_STEP.md">
           <value>
             <set />
