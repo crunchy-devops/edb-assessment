@@ -3,7 +3,8 @@
 ## Configuration 
 VM: Ubuntu 20.04  
 RAM : 4 Gb    
-3 Core
+3 Core  
+IDE: Goland de JetBrains
 
 ## Prerequisites on ubuntu 20.04
 ```shell
@@ -24,6 +25,7 @@ git clone  https://github.com/crunchy-devops/edb-assessment.git
 
 ## Install a virtualenv
 ```shell
+cd edb-assessment.git
 python3 -m venv venv  # set up the module venv in the directory venv
 source venv/bin/activate  # activate the virtualenv python
 pip3 install wheel  # set for permissions purpose
@@ -33,16 +35,18 @@ pip3 install wheel  # set for permissions purpose
 ```shell
 pip3 install ansible # install ansible
 pip3 install requests # extra packages
-ansible --version # check the version number # should be the latest 2.11.2
-ansible-playbook -i inventory_for_ubuntu install_docker_ubuntu.yml --limit local  # run the playbook for installing docker
+ansible --version # check the version number # should be the latest 2.11.4
+ansible-playbook -i inventory install_docker_ubuntu.yml --limit local  # run the playbook for installing docker
 docker version  # check 
-# close your IDE and start again
+# close your IDE and start again for all changes take effect
 cd
 cd edb-assessment
 source venv/bin/activate
 docker ps # Your normal user should be able to start docker  
 ```
 
-## Get a grip on the Poll app
-Go to FIRST_STEP.md in django-polls
+## Get a grip on the Poll app sqlite3 version
+Follow FIRST_STEP.md in django-polls
 
+## Get a grip on the Poll app docker/postgresql/docker-compose version
+Follow SECOND_STEP.md in django-polls-postgresql  
