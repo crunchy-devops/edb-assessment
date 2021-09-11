@@ -29,7 +29,7 @@
     - name: return value
       debug:
         msg: "{{ result.stdout | trim }}"
-    - name: run load test on 10 users, ramp-up 180 seconds, loop 5,  in the test container
+    - name: run load test on 10 users, ramp-up 180 seconds, loop 5
       delegate_to: test
       raw: jmeter -JUSER=10 -JRAMP_UP=180 -JLOOP=5 -Jjmeter.save.saveservice.output_format=xml -Jjmeter.save.saveservice.response_data.on_error=true -n -t /test/tests/polls_test_plan.jmx  -l test2result.jlt
       register: result

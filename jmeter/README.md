@@ -60,4 +60,7 @@ See Regular Expression extractor to get CSRF token, it's copy as a value in the 
 Don't miss to add a HTTP cookie manager at the beginning of test plan to avoid any issue.
 
 ## Test using jmeter container
-
+```shell
+cd ~/edb-assessment/jmeter  # go to the relevant directory
+ansible-playbook -i ../inventory install-jmeter.yml 
+```
