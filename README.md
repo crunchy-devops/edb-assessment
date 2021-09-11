@@ -46,7 +46,10 @@ docker ps # Your normal user should be able to start docker
 ```
 
 ## Get a grip on the Poll app sqlite3 version
-Follow FIRST_STEP.md in django-polls
+Follow FIRST_STEP.md in django-polls directory
 
 ## Get a grip on the Poll app docker/postgresql/docker-compose version
 Follow SECOND_STEP.md in django-polls-postgresql  
+
+# Install Kind
+Follow README.md in kind directory

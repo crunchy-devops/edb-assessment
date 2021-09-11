@@ -1,0 +1,22 @@
+FROM python:3.8.1-alpine
+
+RUN mkdir /app
+
+RUN apk update
+RUN apk add --no-cache --virtual .build-deps \
+    gcc \
+    python3-dev \
+    musl-dev \
+    postgresql-dev \
+    libpq \
+    libffi \
+    postgresql-libs \
+    && pip3 install --no-cache-dir  psycopg2-binary django \
+    && apk del --no-cache .build-deps
+
+WORKDIR /app
+COPY . /app
+
+EXPOSE 8000
+
+

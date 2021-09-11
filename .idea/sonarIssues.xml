@@ -23,12 +23,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/django-polls-postgresql/Dockerfile">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/django-polls-postgresql/SECOND_STEP.md">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/django-polls-postgresql/install-django-app.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/django-polls-postgresql/install-postgresql.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/django-polls-postgresql/mysite/settings.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/django-polls-postgresql/requirements.txt">
           <value>
             <set />
           </value>
@@ -44,6 +64,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/django-polls/mysite/settings.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/jmeter/Dockerfile">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/jmeter/README.md">
           <value>
             <set />
           </value>

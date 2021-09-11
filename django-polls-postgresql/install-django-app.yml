@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Build image todo
+      docker_image:
+        name: 'poll'
+        build:
+          path: .
+        source: build
+      tags:
+        - build
+    - name: Create todoapplication container
+      docker_container:
+        name: 'web'
+        image: poll
+        command: python3 manage.py runserver 0:8000
+        state: 'started'
+        ports:
+          - "8000:8000"
+        links:
+          - "db:postgresql"

@@ -1,0 +1,36 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Create postgresql container
+      docker_container:
+        name: 'db'
+        image: systemdevformations/docker-postgres12
+        state: 'started'
+        env:
+          POSTGRES_PASSWORD: 'password' # Beware: in some version is POSTGRESQL_PASSWORD
+        ports:
+          - "5432:5432"
+        volumes:
+          - "/opt/postgres:/var/lib/postgresql/data"
+      register: db_cont_metadata
+    - name: Get infos on container
+      docker_container_info:
+        name: 'db'
+      register: result
+    - name: Does container exist?
+      debug:
+        msg: "The container {{ 'exist' if result.exists else 'does not exist' }}"
+    - name: IP address
+      debug:
+        msg: "{{result.container.NetworkSettings.IPAddress}}"
+    - name: wait for postgres to accept connections
+      wait_for:
+        host: "{{ result.container.NetworkSettings.IPAddress }}"
+        port: 5432
+        state: 'drained' # will check for active connection
+        connect_timeout: 1
+        timeout: 30  # maximum number of seconds to wait for
+      register: postgresql_running
+      until: postgresql_running is success
+      retries: 10
