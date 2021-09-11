@@ -16,7 +16,7 @@ curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64 # get lates
 chmod +x ./kind  # set kind as an executable
 sudo mv ./kind /usr/local/bin/kind  # move to a system directory
 kind version  # check the version of kind 
-kind create cluster --name=pg  # install kind kubernetes cluster # Notice: should be version 1.21
+kind create cluster --name=pg  --config kind-config.yml # install kind kubernetes cluster # Notice: should be version 1.21
 cd ~/edb-assessment # change to the project
 # work in a container to keep my vm clean 
 docker run -it --rm --name work -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net host alpine sh
@@ -40,5 +40,7 @@ k get pod -w # wait for a while
 Ctrl-C
 k get pod  # Check
 k get svc  # Check 
+k get cluster cluster-example -o yaml # Check the version of postgresql # it's the 13.3
+
 ```
 
