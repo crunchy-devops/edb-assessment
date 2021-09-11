@@ -4,7 +4,7 @@
 VM: Ubuntu 20.04  
 RAM : 4 Gb    
 3 Core  
-IDE: Goland de JetBrains
+IDE: Goland  JetBrains
 
 ## Prerequisites on ubuntu 20.04
 ```shell
@@ -25,7 +25,7 @@ git clone  https://github.com/crunchy-devops/edb-assessment.git
 
 ## Install a virtualenv
 ```shell
-cd edb-assessment.git
+cd edb-assessment
 python3 -m venv venv  # set up the module venv in the directory venv
 source venv/bin/activate  # activate the virtualenv python
 pip3 install wheel  # set for permissions purpose
@@ -48,8 +48,11 @@ docker ps # Your normal user should be able to start docker
 ## Get a grip on the Poll app sqlite3 version
 Follow FIRST_STEP.md in django-polls directory
 
-## Get a grip on the Poll app docker/postgresql/docker-compose version
-Follow SECOND_STEP.md in django-polls-postgresql  
+## Get a grip on the Poll app docker/postgresql/docker version
+Follow SECOND_STEP.md in django-polls-postgresql  directory
+
+## Get a grip on jmeter testing
+Follow README.md in jmeter directory 
 
 # Install Kind
 Follow README.md in kind directory

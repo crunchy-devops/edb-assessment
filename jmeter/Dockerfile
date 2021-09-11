@@ -17,7 +17,7 @@ RUN apk update \
 	&& apk upgrade \
 	&& apk add ca-certificates \
 	&& update-ca-certificates \
-	&& apk add --update openjdk8-jre tzdata curl unzip bash \
+	&& apk add --update openjdk8-jre python  tzdata curl unzip bash \
 	&& apk add --no-cache nss \
 	&& rm -rf /var/cache/apk/* \
 	&& mkdir -p /tmp/dependencies  \
@@ -27,6 +27,7 @@ RUN apk update \
 	&& mv apache-jmeter-${JMETER_VERSION} jmeter \
 	&& rm jmeter.tgz
 
+#RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
 # TODO: plugins (later)
 # && unzip -oq "/tmp/dependencies/JMeterPlugins-*.zip" -d $JMETER_HOME
