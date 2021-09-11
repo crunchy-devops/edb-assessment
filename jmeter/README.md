@@ -57,10 +57,11 @@ Move over Thread group -> right click -> Add -> Listener -> View Results Tree
 ## CSRF token and generic values  
 See Test Plan for all generic values     
 See Regular Expression extractor to get CSRF token, it's copy as a value in the following POST screen  
-Don't miss to add a HTTP cookie manager at the beginning of test plan to avoid any issue.
+Don't miss adding a HTTP cookie manager item at the beginning of test plan to avoid any issue with the CSRF.
 
-## Test using jmeter container
+## Some Tests using jmeter container
 ```shell
 cd ~/edb-assessment/jmeter  # go to the relevant directory
 ansible-playbook -i ../inventory install-jmeter.yml 
+So you can change the IP address, port number and other parameter in jmeter command 
 ```

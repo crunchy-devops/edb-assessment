@@ -5,6 +5,7 @@ VM: Ubuntu 20.04
 RAM : 4 Gb    
 3 Core  
 IDE: Goland  JetBrains
+Some data are present in data directory
 
 ## Prerequisites on ubuntu 20.04
 ```shell
@@ -53,6 +54,7 @@ Follow SECOND_STEP.md in django-polls-postgresql  directory
 
 ## Get a grip on jmeter testing
 Follow README.md in jmeter directory 
+Get a some performance measure
 
 # Install Kind
 Follow README.md in kind directory
