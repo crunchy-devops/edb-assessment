@@ -8,6 +8,11 @@ cd ~/edb-assessment/jmeter  # go to the relevant directory
 docker build -t jmeter .   # build jmeter docker image
 docker images # check  
 ```
+
+## Tests
+```shell
+docker run -d --name test -v ${PWD}:/test jmeter tail -f /dev/null # Start jmeter container
+
 ## Start locally the jmeter gui 
 ### Recording a test plan for your Django Poll website
 Install Firefox and setup the add-on named FoxyProxy  
@@ -57,9 +62,16 @@ Move over Thread group -> right click -> Add -> Listener -> View Results Tree
 ## CSRF token and generic values  
 See Test Plan for all generic values     
 See Regular Expression extractor to get CSRF token, it's copy as a value in the following POST screen  
-Don't miss adding a HTTP cookie manager item at the beginning of test plan to avoid any issue with the CSRF.
+Don't miss adding an HTTP cookie manager item at the beginning of test plan to avoid any issue with the CSRF.
 
-## Some Tests using jmeter container
+## CLI tests command on local host
+```shell
+docker exec -it test jmeter -JIP=192.168.1.85 -Jjmeter.save.saveservice.output_format=xml \
+-Jjmeter.save.saveservice.response_data.on_error=true -n -t /test/tests/polls_test_plan.jmx \
+-l testresult.jlt
+```
+
+## Some Tests using jmeter container from Ansible
 ```shell
 cd ~/edb-assessment/jmeter  # go to the relevant directory
 ansible-playbook -i ../inventory install-jmeter.yml 
