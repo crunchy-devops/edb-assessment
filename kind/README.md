@@ -108,10 +108,10 @@ k create -f django-deployment.yaml
 k exec -it web-xxxx -- /bin/bash
 root@web-xxxx:/app python3 manage.py migrate
 root@web-xxxx:/app python3 manage.py createsuperuser
-# in another terminal 
+# in a second terminal 
 docker exec -it work /bin/ash
 kubectl port-forward service/cluster-example-rw 3000:5432 
-# use jetbrains to check should be 12 tables present 
+# use jetbrains to check,  should have 12 tables in postgres database 
 ```
 ## Load some data
 In goland, use the database tab on right-hand side.   
@@ -120,7 +120,14 @@ Right-click on the table polls_choice and select Import Data from  File
 Select the file to load in the directory data postgres_public_polls_choice.csv
 Do the same for the table polls_question
 
-root@web-xxxx:/app python3 manage.py migrate
+## Create django poll service 
+```shell
+ k expose deployment/web # command line for creating a service for django polls
+ # get yaml file 
+k get svc web -o yaml | kubectl-neat > web-service.yaml # convert to yaml
+kubectl port-forward service/web 3500:8000  # start the port-forwarding
+# check in a browser 
+# http://localhost:3500/polls
 ```
 
 
