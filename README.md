@@ -58,3 +58,6 @@ Get a some performance measure
 
 # Install Kind
 Follow README.md in kind directory
+
+# Go to JMETER directory
+Follow JMETER-K8S.md in jmeter directory 

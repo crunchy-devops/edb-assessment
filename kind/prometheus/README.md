@@ -9,6 +9,6 @@ k create -f config-map.yaml  # config map and settings
 k create -f prometheus-deployment.yaml  # deployment
 k expose -n monitoring deployment/prometheus-deployment # quick install for KinD
 k get svc -A  # check 
- kubectl -n monitoring port-forward service/prometheus-deployment  3750:9090
+k -n monitoring port-forward service/prometheus-deployment  3750:9090
  # Check with your browser 
 ```

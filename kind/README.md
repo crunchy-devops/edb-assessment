@@ -81,16 +81,15 @@ k get events
 ## install kubectl-neat 
 See https://github.com/itaysk/kubectl-neat
 ```shell
+mkdir tools
+cd tools
 wget https://github.com/itaysk/kubectl-neat/archive/v2.0.3.tar.gz
 tar -zxvf v2.0.3.tar.gz 
 cd kubectl-neat-2.0.3/
 apk add build-base
 make
 cp dist/kubectl-neat_linux_amd64 /usr/local/bin/kubectl-neat
-```
-##  Use a pipe
-```shell
-k get pod nginx -o yaml | kubectl-neat  > django-deployment.yaml
+k get svc web -o yaml | kubectl-neat > web-service.yaml
 ```
 
 ## added a command in django-deployment.yaml 
@@ -122,14 +121,17 @@ Do the same for the table polls_question
 
 ## Create django poll service 
 ```shell
- k expose deployment/web # command line for creating a service for django polls
- # get yaml file 
+k expose deployment/web # command line for creating a service for django polls
+# get yaml file 
 k get svc web -o yaml | kubectl-neat > web-service.yaml # convert to yaml
 kubectl port-forward service/web 3500:8000  # start the port-forwarding
 # check in a browser 
 # http://localhost:3500/polls
 ```
 
+## Install prometheus
+See README.md in prometheus directory    
+**Not enough time to carry on investigating Prometheus with Cloud Native Postgresql**
 
 
 
