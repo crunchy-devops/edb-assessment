@@ -31,9 +31,9 @@ http://<ip_address_vm/8000/admin
 ```
 
 ## Load some data 
-In goland, use the database tab on left side.   
+In goland, use the database tab on right-hand side.   
 Set a postgresql database connection  
-Right click on the table polls_choice and select Import Data from  File  
+Right-click on the table polls_choice and select Import Data from  File  
 Select the file to load in the directory data postgres_public_polls_choice.csv
 Do the same for the table polls_question 
 
