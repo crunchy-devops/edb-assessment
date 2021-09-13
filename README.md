@@ -65,7 +65,8 @@ Get a some performance measure
 
 ## TODO: 
 - Better image size for Django Polls image : see distroless solution  
-- Define the good way to add generic ENTRYPOINT/CMD command on Django polls and jmeter  
+- Define the good way to add generic ENTRYPOINT/CMD command on Django polls and jmeter
+  (init-container or other)
 - More ansible scripts for setting up the environment on Docker and K8s from scratch    
 - Add Skaffold developpment   
 - More monitoring, add Django polls app in prometheus monitoring   
