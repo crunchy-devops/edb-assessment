@@ -28,8 +28,8 @@ jmeter -JIP=10.96.23.81 -Jjmeter.save.saveservice.output_format=xml -Jjmeter.sav
 should be more generic 
 
 ## RESULTS
--JIP=10.244.3.7 -JUSER=10 -JRAMP_UP=180 -JLOOP=5
-Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+-JIP=10.244.3.7 -JUSER=10 -JRAMP_UP=180 -JLOOP=5  
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445  
 summary +    241 in 00:00:37 =    6.6/s Avg:    23 Min:     4 Max:    58 Err:     0 (0.00%) Active: 1 Started: 3 Finished: 2  
 summary +    200 in 00:00:35 =    5.7/s Avg:    22 Min:     4 Max:    57 Err:     0 (0.00%) Active: 1 Started: 5 Finished: 4  
 summary =    441 in 00:01:12 =    6.1/s Avg:    23 Min:     4 Max:    58 Err:     0 (0.00%)  

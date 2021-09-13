@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="PASSWORD" host="137.74.107.159" id="d2de68c3-4342-440f-ba11-457a8b16602a" port="22" customName="bac-a-sable" nameFormat="CUSTOM" username="ubuntu">
+      <sshConfig authType="PASSWORD" host="170.75.170.206" id="d2de68c3-4342-440f-ba11-457a8b16602a" port="22" customName="bac-a-sable" nameFormat="CUSTOM" username="ubuntu">
         <option name="customName" value="bac-a-sable" />
       </sshConfig>
     </configs>
