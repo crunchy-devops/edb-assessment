@@ -4,8 +4,8 @@
 VM: Ubuntu 20.04  
 RAM : 4 Gb    
 3 Core  
-IDE: Goland  JetBrains
-Some data are present in data directory
+IDE: Goland  JetBrains  
+Some data are present in the data directory
 
 ## Prerequisites on ubuntu 20.04
 ```shell
@@ -52,12 +52,22 @@ Follow FIRST_STEP.md in django-polls directory
 ## Get a grip on the Poll app docker/postgresql/docker version
 Follow SECOND_STEP.md in django-polls-postgresql  directory
 
-## Get a grip on jmeter testing
+## Get a grip on jmeter testing (Docker version )
 Follow README.md in jmeter directory 
 Get a some performance measure
 
-# Install Kind
+## Install Kind
 Follow README.md in kind directory
 
-# Go to JMETER directory
-Follow JMETER-K8S.md in jmeter directory 
+## Go to JMETER for k8s 
+Follow JMETER-K8S.md in jmeter directory
+Get a some performance measure
+
+## TODO: 
+- Better image size for Django Polls image : see distroless solution  
+- Define the good way to add generic ENTRYPOINT/CMD command on Django polls and jmeter  
+- More ansible scripts for setting up the environment on Docker and K8s from scratch    
+- Add Skaffold developpment   
+- More monitoring, add Django polls app in prometheus monitoring   
+- More Logging  
+- See about Jenkins , Argo CD
