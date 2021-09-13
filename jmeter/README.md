@@ -81,14 +81,14 @@ So you can change the IP address, port number and other parameter in jmeter comm
 # Some performance tests
 -JIP=172.17.0.3 -JUSER=10 -JRAMP_UP=180 -JLOOP=5
 Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
-summary +    111 in 00:00:18 =    6.2/s Avg:    21 Min:     3 Max:    67 Err:     0 (0.00%) Active: 1 Started: 2 Finished: 1
-summary +    406 in 00:00:57 =    7.1/s Avg:    21 Min:     3 Max:    56 Err:     0 (0.00%) Active: 1 Started: 5 Finished: 4
-summary =    517 in 00:01:15 =    6.9/s Avg:    21 Min:     3 Max:    67 Err:     0 (0.00%)
-summary +    144 in 00:00:33 =    4.3/s Avg:    22 Min:     4 Max:    64 Err:     0 (0.00%) Active: 1 Started: 7 Finished: 6
-summary =    661 in 00:01:48 =    6.1/s Avg:    21 Min:     3 Max:    67 Err:     0 (0.00%)
-summary +    156 in 00:00:27 =    5.7/s Avg:    72 Min:     3 Max:   957 Err:     0 (0.00%) Active: 1 Started: 8 Finished: 7
-summary =    817 in 00:02:15 =    6.0/s Avg:    31 Min:     3 Max:   957 Err:     0 (0.00%)
-summary +    250 in 00:00:30 =    8.5/s Avg:    71 Min:     3 Max:  1304 Err:     0 (0.00%) Active: 1 Started: 10 Finished: 9
-summary =   1067 in 00:02:45 =    6.5/s Avg:    40 Min:     3 Max:  1304 Err:     0 (0.00%)
-summary +     33 in 00:00:01 =   26.4/s Avg:    21 Min:     3 Max:    57 Err:     0 (0.00%) Active: 0 Started: 10 Finished: 10
-summary =   1100 in 00:02:46 =    6.6/s Avg:    40 Min:     3 Max:  1304 Err:     0 (0.00%)
+summary +    111 in 00:00:18 =    6.2/s Avg:    21 Min:     3 Max:    67 Err:     0 (0.00%) Active: 1 Started: 2 Finished: 1  
+summary +    406 in 00:00:57 =    7.1/s Avg:    21 Min:     3 Max:    56 Err:     0 (0.00%) Active: 1 Started: 5 Finished: 4  
+summary =    517 in 00:01:15 =    6.9/s Avg:    21 Min:     3 Max:    67 Err:     0 (0.00%)  
+summary +    144 in 00:00:33 =    4.3/s Avg:    22 Min:     4 Max:    64 Err:     0 (0.00%) Active: 1 Started: 7 Finished: 6  
+summary =    661 in 00:01:48 =    6.1/s Avg:    21 Min:     3 Max:    67 Err:     0 (0.00%)  
+summary +    156 in 00:00:27 =    5.7/s Avg:    72 Min:     3 Max:   957 Err:     0 (0.00%) Active: 1 Started: 8 Finished: 7  
+summary =    817 in 00:02:15 =    6.0/s Avg:    31 Min:     3 Max:   957 Err:     0 (0.00%)  
+summary +    250 in 00:00:30 =    8.5/s Avg:    71 Min:     3 Max:  1304 Err:     0 (0.00%) Active: 1 Started: 10 Finished: 9  
+summary =   1067 in 00:02:45 =    6.5/s Avg:    40 Min:     3 Max:  1304 Err:     0 (0.00%)  
+summary +     33 in 00:00:01 =   26.4/s Avg:    21 Min:     3 Max:    57 Err:     0 (0.00%) Active: 0 Started: 10 Finished: 10  
+summary =   1100 in 00:02:46 =    6.6/s Avg:    40 Min:     3 Max:  1304 Err:     0 (0.00%)  
