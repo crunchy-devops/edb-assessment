@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   tasks:
-    - name: Build image todo
+    - name: Build image poll
       docker_image:
         name: 'poll'
         build:
@@ -10,7 +10,7 @@
         source: build
       tags:
         - build
-    - name: Create todoapplication container
+    - name: Create polls container
       docker_container:
         name: 'web'
         image: poll

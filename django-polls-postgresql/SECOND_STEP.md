@@ -6,6 +6,7 @@ cd ~/edb-assessment/
 # you should be in venv
 source venv/bin/activate 
 cd ~/edb-assessment/django-polls-postgresql
+pip install --upgrade pip # upgrade pip to avoid issue
 pip3 install psycopg2-binary  # install postgresql interface for python
 pip3 install docker  # install docker packages for Python
 pip3 install docker-compose # install docker-compose
@@ -21,7 +22,8 @@ docker run -d --name db -e POSTGRES_PASSWORD=password  -v /opt/postgres:/var/lib
 python3 manage.py makemigrations  # detect changes
 python3 manage.py migrate # create database schema
 (Note: You may hit some issue when using django polls directly, db ip address not found
- hit docker network inspect bridge for getting the IP address of db container)
+this is setup for the Docker version of Django polls 
+hit docker network inspect bridge command for getting the IP address of db container)
 python3 manage.py createsuperuser # set superuser username and password
 python3 manage.py runserver 0:8000 # sanity test and enter your first poll 
 # Check in your browser 
@@ -34,8 +36,8 @@ http://<ip_address_vm/8000/admin
 In goland, use the database tab on right-hand side.   
 Set a postgresql database connection  
 Right-click on the table polls_choice and select Import Data from  File  
-Select the file to load in the directory data postgres_public_polls_choice.csv
-Do the same for the table polls_question 
+Select the file to load in the directory data the table polls_question 
+Do the same with postgres_public_polls_choice.csv 
 
 ## Check the database using pgadmin 
 Launch PgAdmin 4 container connected to the Postgresql database
