@@ -32,7 +32,7 @@ source venv/bin/activate  # activate the virtualenv python
 pip3 install wheel  # set for permissions purpose
 ```
 
-## install docker 
+## Install docker 
 ```shell
 pip3 install ansible # install ansible
 pip3 install requests # extra packages
