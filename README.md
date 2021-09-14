@@ -60,7 +60,7 @@ Get a some performance measure
 Follow README.md in kind directory
 
 ## Go to JMETER for k8s 
-Follow JMETER-K8S.md in jmeter directory
+Follow JMETER-K8S.md in jmeter directory  
 Get a some performance measure
 
 ## TODO: 
