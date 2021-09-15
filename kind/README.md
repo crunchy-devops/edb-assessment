@@ -41,7 +41,7 @@ k get Secret cluster-example-app -o yaml # find the secret
 # select username
 echo "YXBw" | base64 -d # get the username
 echo "YTHxxxx...xxx" | base64 -d # get the password
-kubectl port-forward service/cluster-example-rw 3000:5432 # forward port 5432 to 3000 localhost
+kubectl port-forward service/cluster-example-rw 3000:5432 --address='0.0.0.0' # forward port 5432 to 3000 to all world
 # check the connectivity using goland jetbrains
 # connection string  user: app, password , db: postgres, port 3000
 # Check  

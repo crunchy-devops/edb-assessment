@@ -10,6 +10,40 @@
         source: build
       tags:
         - build
+    - name: Add container db to in-memory inventory
+      add_host:
+        name: db
+        ansible_connection: docker
+      changed_when: false
+    - name: Check if polls database exists
+      delegate_to: db
+      become: no
+      remote_user: postgres
+      raw: psql -l | grep polls | wc -l
+      register: result
+    - name: Return value
+      debug:
+        msg: "{{ result.stdout | trim }}"
+    - name: Create database polls
+      delegate_to: db
+      become: no
+      remote_user: postgres
+      raw: psql -c 'create database polls;'
+      when: result.stdout | trim | int == 0
+    - name: Bootstrap the database
+      docker_container:
+        name: 'bootstrap'
+        image: poll
+        command: python3 manage.py migrate
+        state: 'started'
+        links:
+          - "db:postgresql"
+      when: result.stdout | trim | int == 0
+    - name: Remove bootstrap container
+      docker_container:
+        name: 'bootstrap'
+        state: absent
+      when: result.stdout | trim | int == 0
     - name: Create polls container
       docker_container:
         name: 'web'
