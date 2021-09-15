@@ -39,9 +39,27 @@
         links:
           - "db:postgresql"
       when: result.stdout | trim | int == 0
+    - name: set superuser
+      docker_container:
+        name: 'super'
+        image: poll
+        env:
+          DJANGO_SUPERUSER_PASSWORD: "12345678"
+          DJANGO_SUPERUSER_USERNAME: "admin"
+          DJANGO_SUPERUSER_EMAIL: "dockerlite@gmail.com"
+        command: python3 manage.py createsuperuser --no-input
+        state: 'started'
+        links:
+          - "db:postgresql"
+      when: result.stdout | trim | int == 0
     - name: Remove bootstrap container
       docker_container:
         name: 'bootstrap'
+        state: absent
+      when: result.stdout | trim | int == 0
+    - name: Remove super container
+      docker_container:
+        name: 'super'
         state: absent
       when: result.stdout | trim | int == 0
     - name: Create polls container
