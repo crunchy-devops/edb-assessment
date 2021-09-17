@@ -4,7 +4,7 @@
 ```shell
 cd ~/edb-assessment/django-polls
 # you should be in venv
-source venv/bin/activate 
+source ../venv/bin/activate 
 pip3 install django  # install django 
 python3 -m django --version  # check version number
 python3 manage.py migrate  # create database schema

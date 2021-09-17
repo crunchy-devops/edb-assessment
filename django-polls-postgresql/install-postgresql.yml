@@ -2,6 +2,10 @@
 - hosts: all
   become: true
   tasks:
+    - name: Remove image
+      docker_image:
+        state: absent
+        name: systemdevformations/docker-postgres12
     - name: Create postgresql container
       docker_container:
         name: 'db'
