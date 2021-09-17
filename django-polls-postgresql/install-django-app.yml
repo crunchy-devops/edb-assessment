@@ -2,6 +2,10 @@
 - hosts: all
   become: true
   tasks:
+    - name: Remove image
+      docker_image:
+        state: absent
+        name: poll
     - name: Build image poll
       docker_image:
         name: 'poll'
