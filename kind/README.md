@@ -19,6 +19,7 @@ docker run -it --rm --name work -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net
 ```shell
 #in the alpine container
 apk add --no-cache --virtual .build-deps bash gcc musl-dev openssl go curl vim # Install useful packages
+cd /root
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" # Download a version of kubectl
 install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl # install kubectl
 kubectl version --client # Check 
@@ -27,6 +28,7 @@ k get nodes  # Check
 kubectl apply -f https://get.enterprisedb.io/cnp/postgresql-operator-1.7.1.yaml # Run the operator
 kubectl get deploy -n postgresql-operator-system postgresql-operator-controller-manager # check 
 k get pod -A # check 
+cd /work
 k apply -f cluster-example.yaml
 k get pod -w # wait for a while
 Ctrl-C
@@ -56,7 +58,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
         'USER': 'app',
-        'PASSWORD': 'a8GV8XF6qk7TydJqaUqGse0PyjikzgWhwHqA6tVKw5S6PnOW55OQHcnbsfZgztPb',
+        'PASSWORD': 'ZpjHOP8PcLnnqPCQo3AwrC4eKsPLAni0H688nFYFhGsRQ5e2OiNbWWwzwIt9GHIi',
         'HOST': 'cluster-example-rw',
         'PORT': '5432',
     }
@@ -69,30 +71,13 @@ docker login
 docker build -t systemdevformations/poll-k8s . 
 docker push systemdevformations/poll-k8s
 ```
-## Quick deployment
+## Quick dry-run deployment
 back to your alpine container 
 ```shell
-k create deployment web --image=systemdevformations/poll-k8s --port=8000
-# Check but it's failed 
-# pull image is ok 
-k logs -f  web-69675d44d4-d5f5t 
-k get events
-```
-## install kubectl-neat 
-See https://github.com/itaysk/kubectl-neat
-```shell
-mkdir tools
-cd tools
-wget https://github.com/itaysk/kubectl-neat/archive/v2.0.3.tar.gz
-tar -zxvf v2.0.3.tar.gz 
-cd kubectl-neat-2.0.3/
-apk add build-base
-make
-cp dist/kubectl-neat_linux_amd64 /usr/local/bin/kubectl-neat
-k get svc web -o yaml | kubectl-neat > web-service.yaml
+k create deployment web --image=systemdevformations/poll-k8s --dry-run=client --port=8000 -o yaml >django-deployment-noentrypoint.yaml
 ```
 
-## added a command in django-deployment.yaml 
+## Added a command in django-deployment.yaml 
 ```yaml
       - image: systemdevformations/poll-k8s
         command: [ "/usr/bin/tail" ]  # added
@@ -100,10 +85,16 @@ k get svc web -o yaml | kubectl-neat > web-service.yaml
         imagePullPolicy: Always
         name: poll-k8s
 ```
-## Start the deployment again  
+## Start the deployment   
+``` k create -f django-deployment-noentrypoint```
+
+# if it's failed
 ```shell
-k delete deploy web 
-k create -f django-deployment.yaml
+k logs -f  web-xxxxx
+kubectl get events --sort-by='.metadata.creationTimestamp' -A
+```
+# Bootstrap Django Polls
+```shell
 k exec -it web-xxxx -- /bin/bash
 root@web-xxxx:/app python3 manage.py migrate
 root@web-xxxx:/app python3 manage.py createsuperuser
@@ -119,11 +110,37 @@ Right-click on the table polls_choice and select Import Data from  File
 Select the file to load in the directory data postgres_public_polls_choice.csv
 Do the same for the table polls_question
 
+
+## Start Django Polls
+```cp django-deployment-noentrypoint.yaml django-polls-development.yaml```
+change yaml  
+```yaml
+      - image: systemdevformations/poll-k8s
+        command: [ "/usr/bin/python3" ]  # added
+        args: [ "manage.py", "runserver", "0:8000" ]   # added
+        imagePullPolicy: Always
+        name: poll-k8s
+k apply -f django-polls-development.yaml
+```
+
+## install kubectl-neat 
+See https://github.com/itaysk/kubectl-neat
+```shell
+mkdir tools
+cd tools
+wget https://github.com/itaysk/kubectl-neat/archive/v2.0.3.tar.gz
+tar -zxvf v2.0.3.tar.gz 
+cd kubectl-neat-2.0.3/
+apk add build-base
+make
+cp dist/kubectl-neat_linux_amd64 /usr/local/bin/kubectl-neat
+
 ## Create django poll service 
 ```shell
 k expose deployment/web # command line for creating a service for django polls
-# get yaml file 
-k get svc web -o yaml | kubectl-neat > web-service.yaml # convert to yaml
+# Save yaml file for later use 
+k get svc web -o yaml | kubectl-neat > django-polls-service.yaml # convert to yaml
+
 kubectl port-forward service/web 3500:8000  # start the port-forwarding
 # check in a browser 
 # http://localhost:3500/polls
