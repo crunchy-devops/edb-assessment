@@ -104,7 +104,9 @@ data:
       - job_name: 'kube-state-metrics'
         static_configs:
           - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
-
+          - targets: ['cluster-example-1.default.svc.cluster.local:9187']
+          - targets: ['cluster-example-2.default.svc.cluster.local:9187']
+          - targets: ['cluster-example-3.default.svc.cluster.local:9187']
 
       - job_name: 'kubernetes-cadvisor'
 
