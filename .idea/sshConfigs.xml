@@ -5,6 +5,9 @@
       <sshConfig authType="PASSWORD" host="170.75.170.206" id="d2de68c3-4342-440f-ba11-457a8b16602a" port="22" customName="bac-a-sable" nameFormat="CUSTOM" username="ubuntu">
         <option name="customName" value="bac-a-sable" />
       </sshConfig>
+      <sshConfig authType="PASSWORD" host="192.168.122.71" id="d64f9725-995e-4bb3-9ccb-e9d374dbb135" port="22" customName="vm1" nameFormat="CUSTOM" username="ubuntu">
+        <option name="customName" value="vm1" />
+      </sshConfig>
     </configs>
   </component>
 </project>

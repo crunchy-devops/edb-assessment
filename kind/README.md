@@ -18,7 +18,7 @@ docker run -it --rm --name work -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net
 ## Install Cloud Native Postgresql in KinD
 ```shell
 #in the alpine container
-apk add --no-cache --virtual .build-deps bash gcc musl-dev openssl go curl vim # Install useful packages
+apk add --no-cache --virtual .build-deps make bash gcc musl-dev openssl go curl vim # Install useful packages
 cd /root
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" # Download a version of kubectl
 install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl # install kubectl
@@ -44,8 +44,8 @@ k get Secret cluster-example-app -o yaml # find the secret
 echo "YXBw" | base64 -d # get the username
 echo "YTHxxxx...xxx" | base64 -d # get the password
 kubectl port-forward service/cluster-example-rw 3000:5432 --address='0.0.0.0' # forward port 5432 to 3000 to all world
-# check the connectivity using goland jetbrains
-# connection string  user: app, password , db: postgres, port 3000
+# check the connectivity using goland jetbrains database tab on left-hand of the IDE
+# connection string  user: app, password , db: postgres, port 3000  
 # Check  
 ```
 

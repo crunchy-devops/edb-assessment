@@ -1,5 +1,5 @@
 # kubernetes-prometheus
-## Install prometheus 
+## Basic setup of Prometheus 
 Prometheus monitoring on Kubernetes cluster.
 
 Hit the following commands: 
@@ -12,3 +12,4 @@ k get svc -A  # check
 k -n monitoring port-forward service/prometheus-deployment  3750:9090
  # Check with your browser 
 ```
+## Install prometheus Operator

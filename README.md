@@ -53,22 +53,25 @@ Follow FIRST_STEP.md in django-polls directory
 Follow SECOND_STEP.md in django-polls-postgresql  directory
 
 ## Get a grip on jmeter testing (Docker version )
-Follow README.md in jmeter directory 
-Get a some performance measure
+Follow README.md in jmeter directory   
+Get a some performance measure  
 
 ## Install Kind
 Follow README.md in kind directory
 
 ## Go to JMETER for k8s 
 Follow JMETER-K8S.md in jmeter directory  
-Get a some performance measure
+Get a some performance measure  
 
 ## TODO: 
-- Better image size for Django Polls image : see distroless solution  
+- Better image size for Django Polls image : see distroless solution
 - Define the good way to add generic ENTRYPOINT/CMD command on Django polls and jmeter
-  (init-container or other)
-- More ansible scripts for setting up the environment on Docker and K8s from scratch    
-- Add Skaffold developpment   
-- More monitoring, add Django polls app in prometheus monitoring   
-- More Logging  
-- See about Jenkins , Argo CD
+- Write a docker-compose and use Kompose for getting a first version of K8s yaml manifests
+- Customize all pods definitions: Django polls, jmeter by adding side-car containers or init-container as helpers or logging purpose 
+- See Skaffold developpment on multi-projects   
+- More ansible scripts for setting up the environment K8s from scratch
+- More monitoring, add Django polls app in prometheus monitoring, add application monitoring   
+- More Logging for Grafana Loki 
+- Deployment, set up, Replica to 4 , Strategy 25%, type of deployment: Recreate, Rolling Update, Canary, A/B, Green/Blue
+- Helm, Create a Helm chart, 
+- See CI/CD solution using  Jenkins , Argo CD  
