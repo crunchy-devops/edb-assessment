@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta24
+kind: Config
+metadata:
+  name: skaffold-setup
+build:
+  artifacts:
+  - image: systemdevformations/jmeter-k8s
+    context: jmeter
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - jmeter/jmeter-deployment.yaml
