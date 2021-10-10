@@ -38,3 +38,5 @@ ENV PATH $PATH:$JMETER_BIN
 # Entrypoint has same signature as "jmeter" command
 # COPY entrypoint.sh /
 WORKDIR	${JMETER_HOME}
+
+#// TODO: See whether we can use a distroless image

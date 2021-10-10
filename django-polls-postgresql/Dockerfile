@@ -10,4 +10,4 @@ RUN apt-get update && \
 
 EXPOSE 8000
 
-
+# //TODO: Use a distroless image

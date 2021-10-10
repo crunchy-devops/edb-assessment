@@ -1,7 +1,7 @@
 # Monitoring 
 
 ## Install prometheus
-Go to ~/edb-assessment/kind/prometheus/README.me
+Go to ~/edb-assessment/kind/prometheus/README.md
 
 ## expose cluster-example pod 
 ```shell

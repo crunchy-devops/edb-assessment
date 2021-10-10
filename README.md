@@ -72,6 +72,6 @@ Get a some performance measure
 - More ansible scripts for setting up the environment K8s from scratch  
 - More monitoring, add Django polls app in prometheus monitoring, add application monitoring     
 - More Logging for Grafana Loki   
-- Deployment, set up, Replica to 4 , Strategy 25%, type of deployment: Recreate, Rolling Update, Canary, A/B, Green/Blue  
-- Helm, Create a Helm chart  
-- See CI/CD solution using  Jenkins , Argo CD    
+- Deployment, set up, Replica to 4, Strategy 25%, type of deployment: Recreate, Rolling Update, Canary, A/B, Green/Blue  
+- Helm, Create a Helm chart of Django Polls App
+- See CI/CD solution using Jenkins, and Argo CD    

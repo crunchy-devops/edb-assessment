@@ -134,7 +134,7 @@ cd kubectl-neat-2.0.3/
 apk add build-base
 make
 cp dist/kubectl-neat_linux_amd64 /usr/local/bin/kubectl-neat
-
+```
 ## Create django poll service 
 ```shell
 k expose deployment/web # command line for creating a service for django polls
