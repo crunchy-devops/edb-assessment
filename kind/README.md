@@ -18,7 +18,7 @@ docker run -it --rm --name work -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net
 ## Install Cloud Native Postgresql in KinD
 ```shell
 #in the alpine container
-apk add --no-cache --virtual .build-deps bash gcc musl-dev openssl go curl vim # Install useful packages
+apk add --no-cache --virtual .build-deps bash gcc musl-dev openssl go curl vim make # Install useful packages
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" # Download a version of kubectl
 install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl # install kubectl
 kubectl version --client # Check 

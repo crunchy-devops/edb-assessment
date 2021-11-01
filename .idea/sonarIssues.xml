@@ -13,7 +13,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/d0235a56-0bae-4de1-9dea-54ee10c9ae3c/console.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/d0235a56-0bae-4de1-9dea-54ee10c9ae3c/console_1.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/d9d7ff5d-2c45-4253-90cd-be2ddf249410/console.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../docker/docker-aston-poec/UBUNTU.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../docker/todo-flask-postgres/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../docker/todo-flask-postgres/docker-compose.yml">
           <value>
             <set />
           </value>
@@ -73,6 +98,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/inventory">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/jmeter/Dockerfile">
           <value>
             <set />
@@ -108,12 +138,177 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../failover/install-patroni/patroni-pg1.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../failover/install-patroni/patroni-pg2.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../failover/install-patroni/patroni.service">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../failover/install-patroni/patroni.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../katacoda/systemdevlabs/TP-ESIEA-Novembre-2021/index.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../katacoda/systemdevlabs/TP-ESIEA-Novembre-2021/kind.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../katacoda/systemdevlabs/TP-ESIEA-Novembre-2021/kubectl.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../katacoda/systemdevlabs/TP-kubernetes-esiea/index.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../katacoda/systemdevlabs/docker-beginner/index.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../katacoda/systemdevlabs/docker-image-from-iso/index.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../katacoda/systemdevlabs/docker-intermediate/index.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/example-voting-app/k8s/redis-deployment.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/example-voting-app/k8s/redis-service.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/hog.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-authorization/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-configmap/simpleshell.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-first-step/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-helm/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-helm/prom-kube.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-helm/prom-service.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-kind/README.md">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-nfs/PVol.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-nfs/postgresql-pv.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-nfs/storage-quota.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-pod/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-pod/test.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-static-pod/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-taint-tolerations/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/lab-taint-tolerations/vip.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/low-resource-range.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/prometheus/clusterRole.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/rs.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../kubernetes/k8s-webforce3/todo-flask-postgres/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../lunanode/install-kubernetes-lunanode/inventory_template">
           <value>
             <set />
           </value>

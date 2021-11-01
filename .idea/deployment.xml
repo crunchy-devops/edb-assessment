@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="k8s-master" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="vm" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="k8s-master">
+      <paths name="vm">
         <serverdata>
           <mappings>
             <mapping deploy="/home/ubuntu/edb-assessment" local="$PROJECT_DIR$" web="/" />
