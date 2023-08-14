@@ -1,0 +1,38 @@
+---
+- hosts: all
+  #become: true
+  tasks:
+    - name: Build image jmeter
+      docker_image:
+        name: 'jmeter'
+        build:
+          path: .
+        source: build
+      tags:
+        - build_jmeter
+    - name: Create a jmeter/test container
+      docker_container:
+        name: 'test'
+        image: jmeter
+        command: tail -f /dev/null
+        volumes:
+          - .:/test
+        state: 'started'
+    - name: Add container test container to the in-memory inventory
+      add_host:
+        name: test
+        ansible_connection: docker
+    - name: run command in the test container
+      delegate_to: test
+      raw: jmeter -Jjmeter.save.saveservice.output_format=xml -Jjmeter.save.saveservice.response_data.on_error=true -n -t /test/tests/polls_test_plan.jmx  -l testresult.jlt
+      register: result
+    - name: return value
+      debug:
+        msg: "{{ result.stdout | trim }}"
+    - name: run load test on 10 users, ramp-up 180 seconds, loop 5
+      delegate_to: test
+      raw: jmeter -JUSER=10 -JRAMP_UP=180 -JLOOP=5 -Jjmeter.save.saveservice.output_format=xml -Jjmeter.save.saveservice.response_data.on_error=true -n -t /test/tests/polls_test_plan.jmx  -l test2result.jlt
+      register: result
+    - name: return value
+      debug:
+        msg: "{{ result.stdout | trim }}"

@@ -1,0 +1,78 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Remove image
+      docker_image:
+        state: absent
+        name: poll
+    - name: Build image poll
+      docker_image:
+        name: 'poll'
+        build:
+          path: .
+        source: build
+      tags:
+        - build
+    - name: Add container db to in-memory inventory
+      add_host:
+        name: db
+        ansible_connection: docker
+      changed_when: false
+    - name: Check if polls database exists
+      delegate_to: db
+      become: no
+      remote_user: postgres
+      raw: psql -l | grep polls | wc -l
+      register: result
+    - name: Return value
+      debug:
+        msg: "{{ result.stdout | trim }}"
+    - name: Create database polls
+      delegate_to: db
+      become: no
+      remote_user: postgres
+      raw: psql -c 'create database polls;'
+      when: result.stdout | trim | int == 0
+    - name: Bootstrap the database
+      docker_container:
+        name: 'bootstrap'
+        image: poll
+        command: python3 manage.py migrate
+        state: 'started'
+        links:
+          - "db:postgresql"
+      when: result.stdout | trim | int == 0
+    - name: set superuser
+      docker_container:
+        name: 'super'
+        image: poll
+        env:
+          DJANGO_SUPERUSER_PASSWORD: "12345678"
+          DJANGO_SUPERUSER_USERNAME: "admin"
+          DJANGO_SUPERUSER_EMAIL: "dockerlite@gmail.com"
+        command: python3 manage.py createsuperuser --no-input
+        state: 'started'
+        links:
+          - "db:postgresql"
+      when: result.stdout | trim | int == 0
+    - name: Remove bootstrap container
+      docker_container:
+        name: 'bootstrap'
+        state: absent
+      when: result.stdout | trim | int == 0
+    - name: Remove super container
+      docker_container:
+        name: 'super'
+        state: absent
+      when: result.stdout | trim | int == 0
+    - name: Create polls container
+      docker_container:
+        name: 'web'
+        image: poll
+        command: python3 manage.py runserver 0:8000
+        state: 'started'
+        ports:
+          - "8000:8000"
+        links:
+          - "db:postgresql"
