@@ -5,7 +5,7 @@
 cd   # back to the home directory
 docker ps   # check the docker containers
 docker --version  # check docker version 
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64 # get latest version of kind
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64 # get latest version of kind
 chmod +x ./kind  # set kind as an executable
 sudo mv ./kind /usr/local/bin/kind  # move to a system directory
 kind version  # check the version of kind 
