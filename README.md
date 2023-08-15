@@ -1,4 +1,4 @@
-# edb-assessment from scratch
+# edb-assignment from scratch
 
 ## Configuration 
 VM: Ubuntu 20.04  
@@ -21,12 +21,12 @@ Crtl-c  # exit
 ## Clone the repo  on the VM
 ```shell
 cd   # you should be on your home directory
-git clone  https://github.com/crunchy-devops/edb-assessment.git
+git clone  https://github.com/crunchy-devops/edb-assignment.git
 ```
 
 ## Install a virtualenv
 ```shell
-cd edb-assessment
+cd edb-assignment
 python3 -m venv venv  # set up the module venv in the directory venv
 source venv/bin/activate  # activate the virtualenv python
 pip3 install wheel  # set for permissions purpose
