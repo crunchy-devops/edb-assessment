@@ -39,7 +39,7 @@ pip3 install requests # extra packages
 ansible --version # check the version number # should be the latest 2.11.5
 ansible-playbook -i inventory install_docker_ubuntu.yml --limit local  # run the playbook for installing docker
 docker version  # check 
-# close your IDE and start again for all changes take effect
+# close your IDE and start again for all changes to take effect
 cd
 cd edb-assignment
 source venv/bin/activate
@@ -54,21 +54,21 @@ Follow SECOND_STEP.md in django-polls-postgresql  directory
 
 ## Get a grip on jmeter testing (Docker version )
 Follow README.md in jmeter directory   
-Get a some performance measure  
+Get some performance measure  
 
 ## Install Kind
 Follow README.md in kind directory
 
 ## Go to JMETER for k8s 
 Follow JMETER-K8S.md in jmeter directory  
-Get a some performance measure  
+Get some performance measure  
 
 ## TODO: 
-- Better image size for Django Polls image : see distroless solution  
-- Define the good way to add generic ENTRYPOINT/CMD command on Django polls and jmeter  
-- Write a docker-compose and use Kompose for getting a first version of K8s yaml manifests  
+- Better image size for Django Polls image: see distroless solution  
+- Define a good way to add generic ENTRYPOINT/CMD command on Django polls and jmeter  
+- Write a docker-compose and use Kompose for getting the first version of K8s yaml manifests  
 - Customize all pods definitions: Django polls, jmeter by adding side-car containers or init-container as helpers or logging purpose     
-- See Skaffold developpment on multi-projects     
+- See Skaffold development on multi-projects     
 - More ansible scripts for setting up the environment K8s from scratch  
 - More monitoring, add Django polls app in prometheus monitoring, add application monitoring     
 - More Logging for Grafana Loki   
