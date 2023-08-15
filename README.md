@@ -41,7 +41,7 @@ ansible-playbook -i inventory install_docker_ubuntu.yml --limit local  # run the
 docker version  # check 
 # close your IDE and start again for all changes take effect
 cd
-cd edb-assessment
+cd edb-assignment
 source venv/bin/activate
 docker ps # Your normal user should be able to start docker  
 ```
